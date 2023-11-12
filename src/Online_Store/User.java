@@ -1,5 +1,6 @@
 package Online_Store;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class User {
@@ -151,18 +152,58 @@ public class User {
                 }
 
             } else if (choice.equalsIgnoreCase("Get all product") || choice.equalsIgnoreCase("3")) {
-                System.out.println("eenter you choice (books or electronics): ");
-                String choiceForProduct = new Scanner(System.in).nextLine();
-                if (choice.equalsIgnoreCase("books") || choiceForProduct.equals("1")) {
 
+//                if (choice.equalsIgnoreCase("books") || choice.equals("1")) {
+//                   getAllProducts();
+                    for (int i = 0; i < Book.booksIndex; i++) {
+                        System.out.println("Book #"+i);
+                        System.out.println(Book.getBooks()[i]);
+                        System.out.println("-------------------------------------------------------------------------------------------");
+                    }
+//                }
+                for (int i = 0; i <Electronics.electronicsIndex ; i++) {
+                    System.out.println("Electronnic #"+i+1);
+                    System.out.println(Electronics.getElectronics()[i]);
+                    System.out.println("--------------------------------------------------------------------------------------------");
                 }
-            } else if (choice.equalsIgnoreCase("Get all book") || choice.equalsIgnoreCase("4")) {
+            }
+//                }
+            else if (choice.equalsIgnoreCase("Get all book") || choice.equalsIgnoreCase("4")) {
+
+                for (int i = 0; i < Book.booksIndex; i++) {
+                    System.out.println("Book #"+i);
+                    System.out.println(Book.getBooks()[i]);
+                    System.out.println("-------------------------------------------------------------------------------------------");
+                }
+
 
 
             } else if (choice.equalsIgnoreCase("Get all electronics") || choice.equalsIgnoreCase("5")) {
+                for (int i = 0; i <Electronics.electronicsIndex ; i++) {
+                    System.out.println("Electronnic #"+i+1);
+                    System.out.println(Electronics.getElectronics()[i]);
+                    System.out.println("--------------------------------------------------------------------------------------------");
+                }
             }
+
         }
+
     }
+//    public static void getAllProducts(){
+//        for (int i = 0; i < Book.booksIndex; i++) {
+//            System.out.println("Book #"+i);
+//            System.out.println(Book.getBooks()[i]);
+//            System.out.println("-------------------------------------------------------------------------------------------");
+//        }
+//        for (int i = 0; i <Electronics.electronicsIndex ; i++) {
+//            System.out.println("Electronnic #"+i+1);
+//            System.out.println(Electronics.getElectronics()[i]);
+//            System.out.println("--------------------------------------------------------------------------------------------");
+//        }
+//    }
+
+
+
 
 
     public static void Exit() {

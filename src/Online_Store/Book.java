@@ -27,13 +27,31 @@ public class Book extends Product {
 
     @Override
     public String toString() {
-        return "Book: " +"\n"+
+        return "Book: " + "\n" +
                 "author name: " + authorName + '\'' +
-                 super.toString();
+                super.toString();
     }
 
     private static Book[] books = new Book[20];
-    private static int booksIndex=0;
+
+    public static Book[] getBooks() {
+        return books;
+    }
+
+    public static int getBooksIndex() {
+        return booksIndex;
+    }
+
+    public static void setBooksIndex(int booksIndex) {
+        Book.booksIndex = booksIndex;
+    }
+
+    public static void setBooks(Book[] books) {
+        Book.books = books;
+
+    }
+
+    public static int booksIndex = 0;
 
     public static void addElement(Book book) {
         while (true) {
@@ -60,25 +78,25 @@ public class Book extends Product {
             System.out.println("Enter created place: ");
             String createdAt = new Scanner(System.in).nextLine();
             book.setCreatedAt(createdAt);
-            if (createdAt.isEmpty()){
+            if (createdAt.isEmpty()) {
                 System.out.println("Invalid created place,please try again!!!");
                 return;
             }
             System.out.println("Enter author name:");
             String authorName = new Scanner(System.in).nextLine();
             book.setAuthorName(authorName);
-            if (authorName.isEmpty()){
+            if (authorName.isEmpty()) {
                 System.out.println("Invalid author name,please try again!!!");
                 return;
             }
-            books[booksIndex]=new Book(name,description,price,createdAt,authorName);
+            books[booksIndex] = new Book(name, description, price, createdAt, authorName);
             System.out.println("Successfully added!!!");
-            System.out.println( books[booksIndex]);
+            System.out.println(books[booksIndex]);
             booksIndex++;
+            System.out.println(Arrays.toString(books));
             return;
 
         }
-
 
 
 

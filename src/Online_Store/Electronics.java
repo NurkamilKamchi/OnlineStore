@@ -73,7 +73,23 @@ public class Electronics extends Product {
 
     private static  Electronics[] electronics = new Electronics[20];
 
-    private static int electronicsIndex = 0;
+    public static Electronics[] getElectronics() {
+        return electronics;
+    }
+
+    public static void setElectronics(Electronics[] electronics) {
+        Electronics.electronics = electronics;
+    }
+
+    public static int getElectronicsIndex() {
+        return electronicsIndex;
+    }
+
+    public static void setElectronicsIndex(int electronicsIndex) {
+        Electronics.electronicsIndex = electronicsIndex;
+    }
+
+    public static int electronicsIndex = 0;
 
     public static void Electronics(Electronics electronic) {
         while (true) {
